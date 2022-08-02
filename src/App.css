@@ -27,10 +27,6 @@ main{
   height: 97vh;
   width: 100%;
   border-radius: 0.25rem;
-  padding: 0.8rem;
+  padding: 0.9rem;
   overflow: auto;
-}
-
-.content{
-  width: 100%;
 }

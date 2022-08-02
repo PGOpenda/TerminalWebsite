@@ -1,14 +1,13 @@
 import React from "react";
 import './App.css';
+import Terminal from "./components/Terminal";
 
 function App() {
 
   return (
     <main>
       <div className = "container">
-        <div className="content">
-         
-        </div>
+        <Terminal />
       </div>
     </main>
   );
