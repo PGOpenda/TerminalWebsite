@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  background-color: rgb(13, 25, 38);
+  color: rgb(180, 225, 253);
+  font-family: CascadiaCode,monospace;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+
+main{
+  padding: 0.5rem;
+}
+
+.container{
+  border: 2px solid rgb(255, 131, 8);
+  height: 97vh;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0.8rem;
+  overflow: auto;
+}
+
+.content{
+  width: 100%;
+}
