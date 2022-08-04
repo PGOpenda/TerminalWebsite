@@ -1,16 +1,34 @@
 import React from "react";
-import "./Terminal.css";
+import TerminalOutput from "./TerminalOutput";
+import UseOnEnter from "./UseOnEnter";
+import Prompt from "./Prompt";
 
-function Terminal () {
+function Terminal () { 
+    const inputText = React.useRef()
+
+    const [terminalOutput, onEnter] = UseOnEnter()
+
+    React.useEffect(() => {
+        inputText.current.value = ""
+        inputText.current.focus()
+    })
+
     return (
         <div className="content">
+            <TerminalOutput 
+                terminalOutput={terminalOutput} 
+            /> 
             <div className="terminal-label">
-                <span className="txt1">visitant</span>
-                <span className="txt2">@</span>
-                <span className="txt3">PG.OPENDA</span>
-                <span className="txt4">:$ ~</span>
-                <input type="text" className="input" autoCorrect="off" autoComplete="off"/>
-            </div> 
+                <Prompt />
+                <input
+                    ref={inputText}
+                    type="text" 
+                    className="input" 
+                    autoCorrect="off" 
+                    autoComplete="off"
+                    onKeyDown={({ target: { value }, key }) => onEnter(value, key) } 
+                />
+            </div>
         </div>
     )
 }
