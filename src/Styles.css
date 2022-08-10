@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   -ms-overflow-style: none;
+  white-space: inherit;
 }
 
 ::-webkit-scrollbar {
@@ -24,11 +25,11 @@ main{
 
 .container{
   border: 2px solid rgb(255, 131, 8);
-  height: 97vh;
+  height: 98vh;
   width: 100%;
   border-radius: 0.25rem;
   padding: 0.9rem;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .content{

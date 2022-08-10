@@ -6,6 +6,8 @@ import Prompt from "./Prompt";
 function Terminal () { 
     const inputText = React.useRef()
 
+    const bottomRef = React.useRef(null);
+
     const [terminalOutput, onEnter] = UseOnEnter()
 
     React.useEffect(() => {
@@ -13,8 +15,16 @@ function Terminal () {
         inputText.current.focus()
     })
 
+    React.useEffect(()=>{
+        bottomRef.current?.scrollIntoView({behavior: 'smooth'})
+    },[terminalOutput])
+
+    function refocus() {
+        input.current.focus()
+    }
+
     return (
-        <div className="content">
+        <div className="content" onClick={refocus}>
             <TerminalOutput 
                 terminalOutput={terminalOutput} 
             /> 
@@ -29,6 +39,7 @@ function Terminal () {
                     onKeyDown={({ target: { value }, key }) => onEnter(value, key) } 
                 />
             </div>
+            <div ref={bottomRef} />    
         </div>
     )
 }

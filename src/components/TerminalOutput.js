@@ -7,7 +7,7 @@ function TerminalOutput(props) {
     React.useEffect(() => {
         if (scrollRef.current)
         scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    });
+    });             
 
     return(
         <div className="output">
@@ -17,7 +17,8 @@ function TerminalOutput(props) {
                     <div>
                         {item}
                     </div>
-                </div>
+                     
+                </div>             
             ))}
         </div>
     )
