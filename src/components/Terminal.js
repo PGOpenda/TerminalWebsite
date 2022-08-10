@@ -20,7 +20,7 @@ function Terminal () {
     },[terminalOutput])
 
     function refocus() {
-        input.current.focus()
+        inputText.current.focus()
     }
 
     return (
